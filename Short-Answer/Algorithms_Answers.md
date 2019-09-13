@@ -29,19 +29,21 @@ found where the egg didn't break after being dropped.  This is a binary search w
 I don't know how to write pseudo code.  Yes, you read that correctly, so I have to go out on a limb 
 here to try the real deal. I did not test this.  Don't beat me up too much on this.
 
-def egg_dropper(number_of_floors):
-    low = 0
-    high = len(number_of_floors) -1
-    Crunch = False
-    while low <= high and not Crunch:
-        mid = (low + high) // 2
-        if broke == number_of_floors[mid]:
-            Crunch = True
-        elif broke < number_of_floors[mid]:
-            high = mid - 1
-        else:
-            low = mid + 1
-    if Crunch == True:
-        print("The egg broke")
-    else:
-        print("The egg did not break")
+```
+def egg_dropper(number_of_floors):    
+    low = 0    
+    high = len(number_of_floors) -1    
+    Crunch = False    
+    while low <= high and not Crunch:    
+        mid = (low + high) // 2    
+        if broke == number_of_floors[mid]:    
+            Crunch = True    
+        elif broke < number_of_floors[mid]:    
+            high = mid - 1    
+        else:    
+            low = mid + 1    
+    if Crunch == True:    
+        print("The egg broke")    
+    else:    
+        print("The egg did not break")    
+```
