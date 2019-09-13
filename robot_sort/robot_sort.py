@@ -1,5 +1,7 @@
 class SortingRobot:
     def __init__(self, l):
+
+        
         """
         SortingRobot takes a list and sorts it.
         """
@@ -96,33 +98,28 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-       
-        while self.can_move_right():
-            self.move_right()
-            self.swap_item()
-            if self.compare_item() == 1:
+        
+        self.set_light_on()
+        while self.light_is_on():  
+            self.set_light_off()
+            while self.can_move_right():  
                 self.swap_item()
-            self.move_left()
-            self.swap_item()
-            self.move_right()
-            
-
-        
-      
-        # while self.can_move_left() == True:
-        #     self.move_left()
-        #     self.swap_item()
-        #     if self.compare_item() == 1:
-        #         self.swap_item()
-        #     self.move_right()
-        #     self.swap_item()
-        #     self.move_left()
-        
+                self.move_right()
+                if self.compare_item() == 1:
+                    self.set_light_on()   
+                self.move_left()
+                self.swap_item()
+                self.move_right()  
+            while self.can_move_left():
+                self.swap_item()
+                self.move_left()
+                if self.compare_item() == -1: 
+                    self.swap_item()
+                self.move_right()
+                self.swap_item()
+                self.move_left()
+        return
        
-        
-        
-        
-        # return
 
 
 if __name__ == "__main__":
