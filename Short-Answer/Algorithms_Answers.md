@@ -18,4 +18,30 @@ and I don't mean Eveready bunnies.
 
 ## Exercise II
 
+Let's assume I took an elevator up to the middle floor of a building.  This is where I would start dropping
+eggs.  Now if I were to drop an egg and it broke, I think I could safely assume tht it would break if 
+I dropped it from any of the floors above.  I would exclude those floors from future tests. Give that, I would 
+make the middle floor the new top floor, and take the elevator down to what would be the new middle 
+floor relative to what floors remain. From there I would drop another.  If the egg broke again, then I would
+follow the same process. The takeaway is that I would half the value of the remaining floors until I
+found where the egg didn't break after being dropped.  This is a binary search with an 0(log n) complexity.
 
+I don't know how to write pseudo code.  Yes, you read that correctly, so I have to go out on a limb 
+here to try the real deal. I did not test this.  Don't beat me up too much on this.
+
+def egg_dropper(number_of_floors):
+    low = 0
+    high = len(number_of_floors) -1
+    Crunch = False
+    while low <= high and not Crunch:
+        mid = (low + high) // 2
+        if broke == number_of_floors[mid]:
+            Crunch = True
+        elif broke < number_of_floors[mid]:
+            high = mid - 1
+        else:
+            low = mid + 1
+    if Crunch == True:
+        print("The egg broke")
+    else:
+        print("The egg did not break")
